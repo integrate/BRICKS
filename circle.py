@@ -22,8 +22,7 @@ class Circle():
         self.rect_circle.x=ballx
         self.rect_circle.y=bally
 
-    def move(self,brick_list):
-        spisok_rect_brick = [x.rect_brick for x in brick_list]
+    def move(self,brick_list, spisok_rect_brick):
         self.rect_circle.x+=self.speedx
 
         if  self.rect_circle.right>= self.width:
@@ -44,6 +43,7 @@ class Circle():
                 self.speedx = -self.speedx
 
             brick_list[touch].reduce_hp_and_remove_brick(brick_list)
+            return
 
 
         self.rect_circle.y+=self.speedy

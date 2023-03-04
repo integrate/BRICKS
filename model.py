@@ -11,8 +11,9 @@ def model_start():
         for ball in spisok_ball:
             ball.position_ball(ballx,bally)
 
+    spisok_rect_brick = [x.rect_brick for x in spisok_cube]
     for ball in spisok_ball:
-        ball.move(spisok_cube)
+        ball.move(spisok_cube, spisok_rect_brick)
 
 
 def hp_reduce_click(xy_pos):
